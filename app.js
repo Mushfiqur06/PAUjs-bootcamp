@@ -178,6 +178,21 @@ function callMe(name, callBack) {
 	console.log('djkfnksjdbfdksb');
 }
 
+callMe(name, function (name) {
+	var newName = name.split('');
+	console.log(newName);
+	console.log(name.split('').join('-'));
+});
+callMe(name, function (name) {
+	console.log(name.toUpperCase());
+});
+callMe(name, function (name) {
+	console.log(name.toLowerCase());
+});
+callMe(name, function (name) {
+	console.log(name.split('').join('*'));
+});
+
 //NILOY
 // niloy
 // n*i*l*y
