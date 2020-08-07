@@ -169,29 +169,29 @@
 
 //fog gof
 
-var name = 'Mushfiqur Niloy';
-function callMe(name, callBack) {
-	console.log('My name is ' + name);
-	console.log('Length ' + name.length);
-	callBack(name);
+// var name = 'Mushfiqur Niloy';
+// function callMe(name, callBack) {
+// 	console.log('My name is ' + name);
+// 	console.log('Length ' + name.length);
+// 	callBack(name);
 
-	console.log('djkfnksjdbfdksb');
-}
+// 	console.log('djkfnksjdbfdksb');
+// }
 
-callMe(name, function (name) {
-	var newName = name.split('');
-	console.log(newName);
-	console.log(name.split('').join('-'));
-});
-callMe(name, function (name) {
-	console.log(name.toUpperCase());
-});
-callMe(name, function (name) {
-	console.log(name.toLowerCase());
-});
-callMe(name, function (name) {
-	console.log(name.split('').join('*'));
-});
+// callMe(name, function (name) {
+// 	var newName = name.split('');
+// 	console.log(newName);
+// 	console.log(name.split('').join('-'));
+// });
+// callMe(name, function (name) {
+// 	console.log(name.toUpperCase());
+// });
+// callMe(name, function (name) {
+// 	console.log(name.toLowerCase());
+// });
+// callMe(name, function (name) {
+// 	console.log(name.split('').join('*'));
+// });
 
 //NILOY
 // niloy
@@ -206,3 +206,88 @@ callMe(name, function (name) {
 // }
 
 // outer()
+
+// var arr = [23, 45, 12, 56];
+
+// arr.forEach(function (data) {
+// 	console.log(data - 2);
+// });
+// function myForeach(arr, callBack) {
+// 	for (var i = 0; i < arr.length; i++) {
+// 		callBack(arr[i], arr, i);
+// 	}
+// }
+
+// myForeach(arr, function (data, fullArr, index) {
+// 	console.log(index);
+// });
+
+// myForeach(arr, function (data) {
+// 	console.log(data - 2);
+// });
+// arr.map(function (data) {
+// 	console.log(data + 2);
+// });
+
+// function myMap(arr, callBack) {
+// 	for (var i = 0; i < arr.length; i++) {
+// 		callBack(arr[i], );
+// 	}
+// }
+// myMap(arr, function (data) {
+// 	console.log(data + 2);
+// });
+
+// var result = arr.map(function (data) {
+// 	return data * 2;
+// });
+// console.log(result);
+
+// var result = arr.filter(function (data) {
+// 	if (data > 50) {
+// 		return data;
+// 	}
+// });
+
+// console.log(result);
+
+// function myFilter(arr, callBack) {
+// 	var newArr = [];
+// 	for (var i = 0; i < arr.length; i++) {
+// 		if (callBack(arr[i])) {
+// 			newArr.push(arr[i]);
+// 		}
+// 	}
+// 	return newArr;
+// }
+
+// var result = myFilter(arr, function (data) {
+// 	return data > 40;
+// });
+// console.log(result);
+
+var arr = [1, 2, 3, 4, 5, 6];
+
+// var result = arr.reduce(function (prevValue, nextValue) {
+// 	return prevValue + nextValue;
+// });
+// console.log(result);
+
+function myReduce(arr, callBack) {
+	var result = undefined;
+
+	for (var i = 0; i < arr.length; i++) {
+		if (result == undefined) {
+			result = arr[i];
+		} else {
+			result = callBack(result, arr[i]);
+		}
+	}
+	return result;
+}
+
+var anotherResult = myReduce(arr, function (prevValue, currentValue) {
+	return prevValue + currentValue;
+});
+
+console.log(anotherResult);
