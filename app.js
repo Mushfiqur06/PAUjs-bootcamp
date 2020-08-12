@@ -266,28 +266,34 @@
 // });
 // console.log(result);
 
-var arr = [1, 2, 3, 4, 5, 6];
+// var arr = [1, 2, 3, 4, 5, 6];
 
 // var result = arr.reduce(function (prevValue, nextValue) {
 // 	return prevValue + nextValue;
 // });
 // console.log(result);
 
-function myReduce(arr, callBack) {
-	var result = undefined;
+// function myReduce(arr, callBack) {
+// 	var result = undefined;
 
-	for (var i = 0; i < arr.length; i++) {
-		if (result == undefined) {
-			result = arr[i];
-		} else {
-			result = callBack(result, arr[i]);
-		}
-	}
-	return result;
+// 	for (var i = 0; i < arr.length; i++) {
+// 		if (result == undefined) {
+// 			result = arr[i];
+// 		} else {
+// 			result = callBack(result, arr[i]);
+// 		}
+// 	}
+// 	return result;
+// }
+
+// var anotherResult = myReduce(arr, function (prevValue, currentValue) {
+// 	return prevValue + currentValue;
+// });
+
+// console.log(anotherResult);
+
+var arr = [1, 2, 3];
+
+for (var i = 0; i < arr.length; i++) {
+	console.log(i);
 }
-
-var anotherResult = myReduce(arr, function (prevValue, currentValue) {
-	return prevValue + currentValue;
-});
-
-console.log(anotherResult);
