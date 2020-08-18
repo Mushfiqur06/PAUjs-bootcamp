@@ -298,50 +298,146 @@
 // 	console.log(i);
 // }
 
-var obj = {
-  name: "Niloy",
-  phone: "01788689889",
-  city: ["Dhaka", "Chittagong", "Comilla", "Chandpur"],
-  anotherObj: {
-    className: "Javascript",
-    classDate: "Today",
-    classTopic: "Object & OOP",
-    name: "Mushfiqur",
+// var obj = {
+//   name: "Niloy",
+//   phone: "01788689889",
+//   city: ["Dhaka", "Chittagong", "Comilla", "Chandpur"],
+//   anotherObj: {
+//     className: "Javascript",
+//     classDate: "Today",
+//     classTopic: "Object & OOP",
+//     name: "Mushfiqur",
 
-    anotherObj2: {},
-    country: ["Bangladesh", "Finland", "India"],
-    getInfo: function () {
-      console.log(obj.anotherObj.name);
-    },
-  },
+//     anotherObj2: {},
+//     country: ["Bangladesh", "Finland", "India"],
+//     getInfo: function () {
+//       console.log(obj.anotherObj.name);
+//     },
+//   },
 
-  getName: function () {
-    console.log(obj.phone);
-  },
+//   getName: function () {
+//     console.log(obj.phone);
+//   },
+// };
+// console.log(obj.anotherObj.getInfo());
+// console.log(obj.anotherObj.country[0]);
+// obj.getName();
+
+// console.log(obj.city[3]);
+// for (item in obj) {
+//   console.log(item);
+// }
+
+// var obj1 = new Object();
+// console.log(typeof obj1);
+
+// console.log(obj.name);
+// console.log(obj["name"]);
+
+// function obj2(name, phone, age) {
+//   var newObj = {};
+//   newObj.name = name;
+//   newObj.phone = phone;
+//   newObj.age = age;
+
+//   return newObj;
+// }
+
+// var result = obj2("Niloy", "017886898889", 25);
+// console.log(result.age);
+
+//Valid
+//Card ID
+//Name
+//Card Type
+//Bank Name
+
+// var card = {
+//   valid: "12-20-2020 -- 12-20-2021",
+//   cardID: "3856784568765",
+//   name: "Customer Name",
+//   cardType: "Debit Card",
+//   bankName: "Brack Bank",
+// };
+
+// var card2 = {
+//   valid: "12-20-2020 -- 12-20-2021",
+//   cardID: "3856784568765",
+//   name: "Customer Name",
+//   cardType: "Credit Card",
+//   bankName: "Brack Bank",
+// };
+// var card3 = {
+//   valid: "12-20-2020 -- 12-20-2021",
+//   cardID: "3856784568765",
+//   name: "Customer Name",
+//   cardType: "Master Card",
+//   bankName: "Brack Bank",
+// };
+
+function Card(name, bankName, cardID, valid, cardType) {
+  this.name = name;
+  this.bankName = bankName;
+  this.cardID = cardID;
+  this.valid = valid;
+  this.cardType = cardType;
+}
+Card.prototype.getInfo = function () {
+  console.log(this.name);
+  console.log(this.bankName);
+  console.log(this.cardType);
 };
-console.log(obj.anotherObj.getInfo());
-console.log(obj.anotherObj.country[0]);
-obj.getName();
+console.log(typeof Card);
 
-console.log(obj.city[3]);
-for (item in obj) {
-  console.log(item);
+const debitCard = new Card(
+  "Customer Name",
+  "Brack Bank",
+  "3765456454",
+  "12-12-2020",
+  "Debit Card"
+);
+console.log(debitCard.cardType);
+const creditCard = new Card(
+  "Customer Name",
+  "Brack Bank",
+  "3765456454",
+  "12-12-2020",
+  "Credit Card"
+);
+console.log(creditCard.cardType);
+console.log(debitCard.getInfo());
+console.log(creditCard.getInfo());
+
+class Person {
+  constructor(name, email, phone, address, age, professonal) {
+    this.name = name;
+    this.email = email;
+    this.phone = phone;
+    this.address = address;
+    this.age = age;
+    this.professonal = professonal;
+  }
 }
 
-var obj1 = new Object();
-console.log(typeof obj1);
+const person = new Person(
+  "Niloy",
+  "mushfiqur06@gmail.com",
+  "01788689889",
+  "Dhaka",
+  24,
+  "student"
+);
+console.log(person.professonal);
 
-console.log(obj.name);
-console.log(obj["name"]);
-
-function obj2(name, phone, age) {
-  var newObj = {};
-  newObj.name = name;
-  newObj.phone = phone;
-  newObj.age = age;
-
-  return newObj;
+class Teacher extends Person {
+  constructor(name, email, job) {
+    super(name, email);
+    this.job = job;
+  }
 }
-
-var result = obj2("Niloy", "017886898889", 25);
-console.log(result.age);
+const teacher = new Teacher(
+  "Mushfiqur Niloy",
+  "mushfiqur06@gmail.com",
+  "Software Engineer"
+);
+console.log(teacher.job);
