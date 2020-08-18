@@ -292,8 +292,56 @@
 
 // console.log(anotherResult);
 
-var arr = [1, 2, 3];
+// var arr = [1, 2, 3];
 
-for (var i = 0; i < arr.length; i++) {
-	console.log(i);
+// for (var i = 0; i < arr.length; i++) {
+// 	console.log(i);
+// }
+
+var obj = {
+  name: "Niloy",
+  phone: "01788689889",
+  city: ["Dhaka", "Chittagong", "Comilla", "Chandpur"],
+  anotherObj: {
+    className: "Javascript",
+    classDate: "Today",
+    classTopic: "Object & OOP",
+    name: "Mushfiqur",
+
+    anotherObj2: {},
+    country: ["Bangladesh", "Finland", "India"],
+    getInfo: function () {
+      console.log(obj.anotherObj.name);
+    },
+  },
+
+  getName: function () {
+    console.log(obj.phone);
+  },
+};
+console.log(obj.anotherObj.getInfo());
+console.log(obj.anotherObj.country[0]);
+obj.getName();
+
+console.log(obj.city[3]);
+for (item in obj) {
+  console.log(item);
 }
+
+var obj1 = new Object();
+console.log(typeof obj1);
+
+console.log(obj.name);
+console.log(obj["name"]);
+
+function obj2(name, phone, age) {
+  var newObj = {};
+  newObj.name = name;
+  newObj.phone = phone;
+  newObj.age = age;
+
+  return newObj;
+}
+
+var result = obj2("Niloy", "017886898889", 25);
+console.log(result.age);
