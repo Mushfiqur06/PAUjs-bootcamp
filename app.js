@@ -375,69 +375,94 @@
 //   bankName: "Brack Bank",
 // };
 
-function Card(name, bankName, cardID, valid, cardType) {
-  this.name = name;
-  this.bankName = bankName;
-  this.cardID = cardID;
-  this.valid = valid;
-  this.cardType = cardType;
-}
-Card.prototype.getInfo = function () {
-  console.log(this.name);
-  console.log(this.bankName);
-  console.log(this.cardType);
+// function Card(name, bankName, cardID, valid, cardType) {
+//   this.name = name;
+//   this.bankName = bankName;
+//   this.cardID = cardID;
+//   this.valid = valid;
+//   this.cardType = cardType;
+// }
+// Card.prototype.getInfo = function () {
+//   console.log(this.name);
+//   console.log(this.bankName);
+//   console.log(this.cardType);
+// };
+// console.log(typeof Card);
+
+// const debitCard = new Card(
+//   "Customer Name",
+//   "Brack Bank",
+//   "3765456454",
+//   "12-12-2020",
+//   "Debit Card"
+// );
+// console.log(debitCard.cardType);
+// const creditCard = new Card(
+//   "Customer Name",
+//   "Brack Bank",
+//   "3765456454",
+//   "12-12-2020",
+//   "Credit Card"
+// );
+// console.log(creditCard.cardType);
+// console.log(debitCard.getInfo());
+// console.log(creditCard.getInfo());
+
+// class Person {
+//   constructor(name, email, phone, address, age, professonal) {
+//     this.name = name;
+//     this.email = email;
+//     this.phone = phone;
+//     this.address = address;
+//     this.age = age;
+//     this.professonal = professonal;
+//   }
+// }
+
+// const person = new Person(
+//   "Niloy",
+//   "mushfiqur06@gmail.com",
+//   "01788689889",
+//   "Dhaka",
+//   24,
+//   "student"
+// );
+// console.log(person.professonal);
+
+// class Teacher extends Person {
+//   constructor(name, email, job) {
+//     super(name, email);
+//     this.job = job;
+//   }
+// }
+// const teacher = new Teacher(
+//   "Mushfiqur Niloy",
+//   "mushfiqur06@gmail.com",
+//   "Software Engineer"
+// );
+// console.log(teacher.job);
+
+const obj = {
+  name: "Niloy",
+  number: 24,
 };
-console.log(typeof Card);
+console.log("Normal Object");
+console.log(obj);
 
-const debitCard = new Card(
-  "Customer Name",
-  "Brack Bank",
-  "3765456454",
-  "12-12-2020",
-  "Debit Card"
-);
-console.log(debitCard.cardType);
-const creditCard = new Card(
-  "Customer Name",
-  "Brack Bank",
-  "3765456454",
-  "12-12-2020",
-  "Credit Card"
-);
-console.log(creditCard.cardType);
-console.log(debitCard.getInfo());
-console.log(creditCard.getInfo());
+function userCreator(name, number) {
+  const newUser = Object.create(userFuntionStore);
+  newUser.name = name;
+  newUser.number = number;
 
-class Person {
-  constructor(name, email, phone, address, age, professonal) {
-    this.name = name;
-    this.email = email;
-    this.phone = phone;
-    this.address = address;
-    this.age = age;
-    this.professonal = professonal;
-  }
+  return newUser;
 }
 
-const person = new Person(
-  "Niloy",
-  "mushfiqur06@gmail.com",
-  "01788689889",
-  "Dhaka",
-  24,
-  "student"
-);
-console.log(person.professonal);
+const userFuntionStore = {
+  increment: function () {
+    this.number++;
+  },
+};
 
-class Teacher extends Person {
-  constructor(name, email, job) {
-    super(name, email);
-    this.job = job;
-  }
-}
-const teacher = new Teacher(
-  "Mushfiqur Niloy",
-  "mushfiqur06@gmail.com",
-  "Software Engineer"
-);
-console.log(teacher.job);
+const result = userCreator("Will", 34);
+console.log("Generator Function");
+console.log(result);
