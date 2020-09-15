@@ -17,3 +17,21 @@
 .list-item h2 {
   margin: 0;
 }
+.box {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+.circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.left {
+  left: -5px;
+}
+.right {
+  right: +5px;
+}
