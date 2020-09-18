@@ -12,6 +12,13 @@ export function getClass(classes) {
     console.log(err);
   }
 }
+export function queryAll(data) {
+  try {
+    return document.querySelectorAll(data);
+  } catch (err) {
+    console.log(err);
+  }
+}
 
 export function create() {
   if (arguments.length === 0) {
